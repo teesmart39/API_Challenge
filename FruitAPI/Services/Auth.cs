@@ -20,7 +20,7 @@ namespace FruitAPI.JWTService
             _configuration = configuration;
         }
 
-        public async Task<APIResponse> Login(Login loginModel)
+        public async Task<APIResponse> LoginAsync(Login loginModel)
         {
             var user = await _userManager.FindByNameAsync(loginModel.Username);
             if (user == null)
@@ -45,7 +45,7 @@ namespace FruitAPI.JWTService
 
                 var jwtToken = GetToken(authClaims);
 
-                return new APIResponse { StatusCode = "Success", Token = new JwtSecurityTokenHandler().WriteToken(jwtToken), Expiration = jwtToken.ValidTo };
+                return new APIResponse { StatusCode = "Success", Token = new JwtSecurityTokenHandler().WriteToken(jwtToken) };
             }
 
             return new APIResponse { StatusCode = "Error", Message = "Invalid username or password." };

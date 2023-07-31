@@ -33,8 +33,8 @@ namespace FruitAPI.Data
                 new ApplicationUser
                 {
                     Id = "1",
-                    UserName = "AdminUser",
-                    NormalizedUserName = "ADMINUSER",
+                    UserName = "Admin",
+                    NormalizedUserName = "ADMIN",
                     Email = "admin@example.com",
                     NormalizedEmail = "ADMIN@EXAMPLE.COM",
                     EmailConfirmed = true,
@@ -43,8 +43,8 @@ namespace FruitAPI.Data
                 new ApplicationUser
                 {
                     Id = "2",
-                    UserName = "BackOfficeUser",
-                    NormalizedUserName = "BACKOFFICEUSER",
+                    UserName = "BackOffice",
+                    NormalizedUserName = "BACKOFFICE",
                     Email = "backoffice@example.com",
                     NormalizedEmail = "BACKOFFICE@EXAMPLE.COM",
                     EmailConfirmed = true,
@@ -53,8 +53,8 @@ namespace FruitAPI.Data
                 new ApplicationUser
                 {
                     Id = "3",
-                    UserName = "FrontOfficeUser",
-                    NormalizedUserName = "FRONTOFFICEUSER",
+                    UserName = "FrontOffice",
+                    NormalizedUserName = "FRONTOFFICE",
                     Email = "frontoffice@example.com",
                     NormalizedEmail = "FRONTOFFICE@EXAMPLE.COM",
                     EmailConfirmed = true,
@@ -74,7 +74,7 @@ namespace FruitAPI.Data
             public ApplicationDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-                optionsBuilder.UseSqlite("Data Source=app.db"); // Replace with your connection string
+                optionsBuilder.UseSqlite("Data Source=app.db");
 
                 return new ApplicationDbContext(optionsBuilder.Options);
             }

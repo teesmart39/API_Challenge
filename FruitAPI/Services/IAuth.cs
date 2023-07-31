@@ -7,7 +7,7 @@ namespace FruitAPI.JWTService
 {
     public interface IAuth
     {
-        Task<APIResponse> Login(Login loginModel);
+        Task<APIResponse> LoginAsync(Login loginModel);
         JwtSecurityToken GetToken(List<Claim> authClaims);
 
     }

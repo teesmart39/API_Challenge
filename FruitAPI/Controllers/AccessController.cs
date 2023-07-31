@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FruitAPI.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +11,16 @@ namespace FruitAPI.Controllers
 
     public class AccessController : ControllerBase
     {
+
+
         [HttpGet]
         public IActionResult Get()
         {
             string[] fruits = new string[] { "Apple", "Banana", "Orange" };
             return Ok(fruits);
         }
+
+
 
     }
 }

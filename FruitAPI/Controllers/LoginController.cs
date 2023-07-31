@@ -20,7 +20,7 @@ namespace FruitAPI.Controllers
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] Login loginModel)
         {
-            var response = await _auth.Login(loginModel);
+            var response = await _auth.LoginAsync(loginModel);
 
             if (response.StatusCode == "Success")
             {
